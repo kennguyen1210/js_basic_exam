@@ -1,4 +1,4 @@
-// nhap du lieu
+// nhap thong tin co ban cua cac sinh vien
 let studentList = [];
 let student = [];
 let studentId;
@@ -11,6 +11,7 @@ let avgMark;
 let rank;
 
 for (let i = 0; i < 5; i++) {
+  // nhap ma sinh vien
   do {
     studentId = prompt(
       `Nhập mã sinh viên ${i + 1}  (gồm 5 ký tự và bắt đầu bằng chữ S)`
@@ -22,6 +23,7 @@ for (let i = 0; i < 5; i++) {
       continue;
     }
   } while (true);
+  // nhap ten sinh vien
   do {
     studentName = prompt(`Nhập tên sinh viên ${i + 1} (gồm 6-30 ký tự)`);
     if (studentName.length >= 6 && studentName.length <= 30) {
@@ -31,7 +33,7 @@ for (let i = 0; i < 5; i++) {
       continue;
     }
   } while (true);
-
+  // nhap tuoi sinh vien
   do {
     age = prompt(`Nhập tuổi sinh viên ${i + 1} (từ 18-30 tuổi)`);
     if (!isNaN(age) && age.length == 2 && 18 <= Number(age) <= 30) {
@@ -41,7 +43,7 @@ for (let i = 0; i < 5; i++) {
       continue;
     }
   } while (true);
-
+  // nhap diem html
   do {
     mark_html = prompt(
       `Nhập điểm html của sinh viên ${
@@ -55,7 +57,7 @@ for (let i = 0; i < 5; i++) {
       continue;
     }
   } while (true);
-
+  // nhap diem css
   do {
     mark_css = prompt(
       `Nhập điểm css của sinh viên ${
@@ -69,7 +71,7 @@ for (let i = 0; i < 5; i++) {
       continue;
     }
   } while (true);
-
+  // nhap diem js
   do {
     mark_js = prompt(
       `Nhập điểm javascript của sinh viên ${
@@ -83,6 +85,7 @@ for (let i = 0; i < 5; i++) {
       continue;
     }
   } while (true);
+  // tinh diem trung binh, xep loai va nhap du lieu vao mang
   avgMark = (Number(mark_html) + Number(mark_css) + Number(mark_js)) / 3;
   if (avgMark < 5) {
     rank = "Yếu";
